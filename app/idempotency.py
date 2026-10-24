@@ -52,9 +52,15 @@ class IdempotencyStore:
 
     def __init__(self, db_path: Optional[str] = None):
         self.db_path = db_path or settings.DB_PATH
+        self._mem_conn: Optional[sqlite3.Connection] = None
+        if self.db_path == ":memory:":
+            self._mem_conn = sqlite3.connect(":memory:", timeout=10.0, check_same_thread=False)
+            self._mem_conn.row_factory = sqlite3.Row
         self._init_db()
 
     def _get_connection(self) -> sqlite3.Connection:
+        if self._mem_conn is not None:
+            return self._mem_conn
         conn = sqlite3.connect(self.db_path, timeout=10.0, check_same_thread=False)
         conn.row_factory = sqlite3.Row
         return conn
