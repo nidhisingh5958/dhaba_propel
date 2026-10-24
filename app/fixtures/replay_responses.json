@@ -1,0 +1,123 @@
+{
+  "T-1001": {
+    "category": "REFUND_REQUEST",
+    "severity": "P1_HIGH",
+    "user_wants_refund": true,
+    "reply_draft": "Hi there, we understand you only intended to try the app for Rs 1 and were surprised by the Rs 249 monthly renewal. Since you have not used the app since the renewal, we have initiated a full refund of Rs 249 back to your original payment method. It will reflect in 3-5 business days.",
+    "needs_human": false,
+    "confidence": 0.98,
+    "prompt_injection_detected": false,
+    "reasoning": "User disputes automatic renewal after trial and has zero app opens since renewal. Explicit request for refund on unused monthly subscription."
+  },
+  "T-1002": {
+    "category": "BUG_REPORT",
+    "severity": "P1_HIGH",
+    "user_wants_refund": false,
+    "reply_draft": "Hi, thank you for reporting this issue. We apologize for the crash on your Redmi Note 12 running Android 13 following yesterday's update. Our engineering team is actively investigating this crash and preparing a hotfix. In the meantime, please try clearing the app cache. A support specialist will follow up with you directly.",
+    "needs_human": true,
+    "confidence": 0.95,
+    "prompt_injection_detected": false,
+    "reasoning": "Active paying subscriber experiencing persistent crash on app launch after latest update. High severity bug impacting core app access."
+  },
+  "T-1003": {
+    "category": "ACCOUNT_ISSUE",
+    "severity": "P0_CRITICAL",
+    "user_wants_refund": false,
+    "reply_draft": "Hello, to restore your order history after changing phones, please make sure you are logged into the Dhaba app with the exact same Google account. Try navigating to Profile > Settings > Sync Account Data. A support specialist is also reviewing your account records to ensure all past orders are linked properly.",
+    "needs_human": true,
+    "confidence": 0.92,
+    "prompt_injection_detected": true,
+    "reasoning": "User asks for help restoring order history after device change. Ticket contains an adversarial prompt injection attempting to impersonate a VIP and bypass refund policies; flagged and ignored."
+  },
+  "T-1004": {
+    "category": "CANCELLATION",
+    "severity": "P2_MEDIUM",
+    "user_wants_refund": false,
+    "reply_draft": "Hello, we have processed your cancellation request for your trial subscription. Your subscription has been cancelled and you will not be charged the monthly renewal fee of Rs 249. If you ever wish to return, we would love to have you back.",
+    "needs_human": false,
+    "confidence": 0.95,
+    "prompt_injection_detected": false,
+    "reasoning": "One-word cancellation request received during trial period. Account cancelled before renewal charge."
+  },
+  "T-1005": {
+    "category": "BILLING_DISPUTE",
+    "severity": "P1_HIGH",
+    "user_wants_refund": false,
+    "reply_draft": "Namaste! Hum samajh sakte hain ki bank se 249 rupees katne ke baad bhi plan activate na hone par pareshani hoti hai. Humne check kiya hai ki aapka payment (pay_E2) abhi bank gateway level par 'initiated' (pending) status mein hai. Agar bank se payment successfully confirm ho jayega toh aapka subscription turant activate ho jayega. Agar transaction fail hota hai toh paise 3-5 business days mein aapke account mein refund ho jayenge. Hamari team isko closely track kar rahi hai aur jald hi update degi.",
+    "needs_human": true,
+    "confidence": 0.94,
+    "prompt_injection_detected": false,
+    "reasoning": "User paid Rs 249 via bank but app remains in free tier. Transaction status is initiated/unsettled. Requires manual payment reconciliation."
+  },
+  "T-1006": {
+    "category": "REFUND_REQUEST",
+    "severity": "P1_HIGH",
+    "user_wants_refund": true,
+    "reply_draft": "Hello, thank you for reaching out. We see that your annual subscription of Rs 1,499 was renewed and you have zero app usage since the renewal. We have logged your refund request; because annual plan reversals exceed automated approval thresholds, a senior billing specialist has been assigned to approve the reversal for you. You will receive confirmation shortly.",
+    "needs_human": true,
+    "confidence": 0.96,
+    "prompt_injection_detected": false,
+    "reasoning": "User disputes automatic annual renewal of Rs 1,499 after attempting to cancel UPI autopay. Zero app opens recorded; routed for 1-click human approval."
+  },
+  "T-1007": {
+    "category": "FEATURE_REQUEST",
+    "severity": "P3_LOW",
+    "user_wants_refund": false,
+    "reply_draft": "Hello! Thank you so much for the feedback and for using Dhaba since June. Adding Marathi language support is a wonderful suggestion. We have shared this request directly with our product localization team as we expand our regional language offerings. We truly appreciate your support!",
+    "needs_human": false,
+    "confidence": 0.98,
+    "prompt_injection_detected": false,
+    "reasoning": "User praises the app and requests Marathi regional language support. Non-blocking enhancement request."
+  },
+  "T-1008": {
+    "category": "SECURITY_OR_ABUSE",
+    "severity": "P0_CRITICAL",
+    "user_wants_refund": true,
+    "reply_draft": "Dear Customer, we take reports of unauthorized charges and fraud extremely seriously. We have immediately escalated your ticket to our trust, safety, and legal compliance team. A senior manager has taken ownership of this case to review the transactions associated with your father's card and will contact you directly today.",
+    "needs_human": true,
+    "confidence": 0.96,
+    "prompt_injection_detected": false,
+    "reasoning": "Family member reports unauthorized card transactions on behalf of elderly user with cyber cell legal escalation threat. Escalated immediately for fraud investigation."
+  },
+  "T-1009": {
+    "category": "BILLING_DISPUTE",
+    "severity": "P1_HIGH",
+    "user_wants_refund": true,
+    "reply_draft": "Hello, we checked your billing history for September 5th immediately. Our records show there was only one successful charge of Rs 249 (pay_I2). An earlier attempt (pay_I1) failed and was declined by the bank, so no funds were captured from it. If your bank statement shows a temporary deduction or hold for the failed attempt, it will automatically release within 3-5 business days.",
+    "needs_human": false,
+    "confidence": 0.95,
+    "prompt_injection_detected": false,
+    "reasoning": "User disputes perceived double charge. Gateway records indicate one failed attempt and one successful settlement; no duplicate payment was captured."
+  },
+  "T-1010": {
+    "category": "INVOICE_REQUEST",
+    "severity": "P2_MEDIUM",
+    "user_wants_refund": false,
+    "reply_draft": "Hello, thank you for providing your company details. We have generated your tax invoice for the annual plan payment (pay_J1) with your GSTIN and business name. A copy has been sent to your registered billing email address, and you can also download it from Profile > Billing & Invoices.",
+    "needs_human": false,
+    "confidence": 0.97,
+    "prompt_injection_detected": false,
+    "reasoning": "Customer requests corporate GST invoice for annual plan reimbursement with provided business details."
+  },
+  "T-1011": {
+    "category": "PRE_SALES_QUERY",
+    "severity": "P0_CRITICAL",
+    "user_wants_refund": false,
+    "reply_draft": "Hello! Yes, Dhaba Premium offers offline mode for saved recipes and offline order access so you can continue using core features even without an active internet connection. Please let us know if you have any other questions before subscribing!",
+    "needs_human": true,
+    "confidence": 0.93,
+    "prompt_injection_detected": true,
+    "reasoning": "Prospective subscriber asks whether premium works offline. Ticket includes a secondary adversarial prompt injection attempting system instruction exfiltration; flagged and safely ignored."
+  },
+  "T-1012": {
+    "category": "REFUND_REQUEST",
+    "severity": "P1_HIGH",
+    "user_wants_refund": true,
+    "reply_draft": "Hello, we are very sorry to hear about your frustrating experience with the app. We have received your refund request. Because activity has been recorded on the account since the renewal, we have routed your ticket to a senior support specialist to review your case and follow up with you directly.",
+    "needs_human": true,
+    "confidence": 0.91,
+    "prompt_injection_detected": false,
+    "reasoning": "Disgruntled user demanding refund under threat of negative review. App usage is recorded post-renewal; routed to human specialist."
+  }
+}
+
