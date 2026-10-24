@@ -1,0 +1,32 @@
+# Environment & Secrets
+.env
+.env.*
+
+# Python & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+
+# Database files
+*.db
+*.sqlite3
+
+# Confidential Assignment Materials
+*Propel_Full_Stack_AI_Engineer_Assignment.pdf
+docs/Propel_Full_Stack_AI_Engineer_Assignment.pdf
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
